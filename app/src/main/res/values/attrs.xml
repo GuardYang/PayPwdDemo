@@ -10,5 +10,9 @@
         <attr name="passwordColor" format="color"/>
         <attr name="passwordRadius" format="dimension"/>
     </declare-styleable>
-
+    <declare-styleable name="SwipeCaptchaView">
+        <attr name="captchaWidth" format="dimension"/>
+        <attr name="captchaHeight" format="dimension"/>
+        <attr name="matchDeviation" format="dimension"/>
+    </declare-styleable>
 </resources>
