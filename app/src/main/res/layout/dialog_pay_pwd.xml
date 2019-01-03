@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_height="match_parent">
 
     <LinearLayout
         android:id="@+id/lly_pwd_input_view"
@@ -27,8 +26,8 @@
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
                 android:text="请输入支付密码"
-                android:textColor="@android:color/black"
-                android:textSize="20sp" />
+                android:textColor="#ff242424"
+                android:textSize="18sp" />
 
         </RelativeLayout>
 
@@ -49,10 +48,40 @@
             android:inputType="number"
             android:maxLength="6" />
 
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="6dp">
+
+            <TextView
+                android:id="@+id/forget_psd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="16dp"
+                android:text="忘记密码？"
+                android:textColor="#ff1f9eda"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/tv_tips"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/forget_psd"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="4dp"
+                android:gravity="center"
+                android:maxWidth="200dp"
+                android:text="您已连续输错密码5次，账户将锁定，请明日再试！"
+                android:textColor="#ff9f9f9f"
+                android:textSize="12sp" />
+        </RelativeLayout>
+
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:layout_marginTop="20dp"
             android:background="#CCCCCC" />
 
         <GridView
@@ -65,4 +94,4 @@
             android:verticalSpacing="1dp" />
 
     </LinearLayout>
-</LinearLayout>
+</RelativeLayout>

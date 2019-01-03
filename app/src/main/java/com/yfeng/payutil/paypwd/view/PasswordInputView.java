@@ -10,7 +10,6 @@ import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.GridView;
-import android.widget.LinearLayout;
 
 import com.yfeng.payutil.paypwd.Constants;
 import com.yfeng.payutil.paypwd.R;
@@ -25,7 +24,6 @@ import java.util.Random;
 public class PasswordInputView implements View.OnClickListener {
 
     private Context context;
-    private LinearLayout llyPwdInputView;
     private BottomSheetDialog payPwdDialog;
 
     private PasswordEditText etPwd; // 密码输入框
@@ -34,8 +32,6 @@ public class PasswordInputView implements View.OnClickListener {
     private ArrayList<Map<String, String>> numList; // 数字按键序列
     private String password = ""; // 输入的密码
     private OnPwdInputListener onPwdInputListener;
-
-
     Handler handler = new Handler() {
         @Override
         public void dispatchMessage(Message msg) {
@@ -67,8 +63,6 @@ public class PasswordInputView implements View.OnClickListener {
         payPwdDialog.setCanceledOnTouchOutside(false);
         View view = LayoutInflater.from(context).inflate(R.layout.dialog_pay_pwd, null, false);
         initStep1(view);
-        llyPwdInputView = (LinearLayout) view.findViewById(R.id.lly_pwd_input_view);
-        showStep1();
     }
 
     /**
@@ -98,12 +92,9 @@ public class PasswordInputView implements View.OnClickListener {
             }
         };
         etPwd.addTextChangedListener(textWatcher);
-
         gvKeyboard = (GridView) view.findViewById(R.id.gv_keyboard);
         initKeyboard();
-
         payPwdDialog.setContentView(view);
-
     }
 
 
@@ -157,15 +148,6 @@ public class PasswordInputView implements View.OnClickListener {
     public void show() {
         payPwdDialog.show();
     }
-    public void showStep1() {
-        llyPwdInputView.setVisibility(View.VISIBLE);
-    }
-
-    public void showStep2() {
-        llyPwdInputView.setVisibility(View.GONE);
-
-    }
-
     public void setOnPwdInputListener(OnPwdInputListener listener) {
         this.onPwdInputListener = listener;
     }
